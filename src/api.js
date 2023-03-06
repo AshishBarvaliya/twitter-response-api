@@ -7,11 +7,10 @@ const { Configuration, OpenAIApi } = require("openai");
 const Twit = require("twit");
 const TwitterApi = require("twitter-api-v2").default;
 require("dotenv").config();
+const router = express.Router();
 
 app.use(cors());
 app.use(bodyParser.json());
-
-const router = express.Router();
 
 const twitterClient = new TwitterApi({
   clientId: process.env.AUTH_CLIENT_ID,
