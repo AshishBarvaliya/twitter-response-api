@@ -1,0 +1,26 @@
+{
+  "name": "sentimental-analysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "netlify-cli": "^13.0.1",
+    "netlify-lambda": "^2.0.16",
+    "openai": "^3.1.0",
+    "serverless-http": "^3.1.1",
+    "twit": "^2.2.11",
+    "twitter-api-v2": "^1.14.2"
+  }
+}
