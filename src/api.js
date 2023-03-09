@@ -91,13 +91,13 @@ router.post("/posttweet", async (req, res) => {
   const tweet = req.body.tweet;
   const tweetId = req.body.tweetId;
 
-  const {
-    client: refreshedClient,
-    // accessToken,
-    // refreshToken: newRefreshToken,
-  } = await twitterClient.refreshOAuth2Token(grefreshToken);
+  // const {
+  // client: refreshedClient,
+  // accessToken,
+  // refreshToken: newRefreshToken,
+  // } = await twitterClient.refreshOAuth2Token(grefreshToken);
 
-  const { data } = await refreshedClient.v2.reply(tweet, tweetId);
+  const { data } = await loggedClient.v2.reply(tweet, tweetId);
   res.send({ data });
 });
 
