@@ -45,10 +45,6 @@ router.get("/auth", (req, res) => {
   res.send({ rurl: url });
 });
 
-router.get("/", (_, res) => {
-  res.json({ test: "hello" });
-});
-
 router.get("/callback", async (req, res) => {
   const { state, code } = req.query;
 
@@ -78,7 +74,7 @@ router.post("/gettweets", (req, res) => {
   const query = req.body.q;
   const count = req.body.count || 10;
 
-  T.get("search/tweets", { q: query, count, lang: "en" }, (err, data) => {
+  T.get("search/tweets", { q: query, count }, (err, data) => {
     if (err) {
       res.status(500).send("Error retrieving tweets");
     } else {
